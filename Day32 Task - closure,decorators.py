@@ -78,18 +78,21 @@ True
 Explanation:
 Create an outer function that stores the suffix and returns an inner function to check whether any given string ends with that suffix.
 '''
+#
+'''
 def suffix_check(suffix):
     def check(word):
         return word.endswith(suffix)
     return check
+text=input("Enter text:")
 suffix=input("enter suffix:")
 check=suffix_check(suffix)
-text=input("Enter text:")
 print(check(text))
+'''
 ### 5. Write a Python program to find the longest word whose characters are all unique in a given sentence.
 '''
 Input:
-level world python amazing apple
+level world python amazing apple 
 Output:
 python
 Explanation:
@@ -106,8 +109,36 @@ for i in words:
             longest=i
 print(longest)
 '''
+#############################################################################################################################################################################################
 
 
+#                              Level 1 – Beginner (Decorators)
+
+#1. Print Stars Decorator
+'''
+def decfun(fun):
+    def innerfun():
+        print('*'*20)
+        fun()
+        print('*'*20)
+    return innerfun
+@decfun
+def greet():
+    print("Python")
+greet()
+'''
+#2. Lowercase Decorator
+
+def lower_cheker(fun):
+    def innerfun():
+        y=fun()
+        return y.lower()
+    return innerfun
+@lower_cheker
+def lower():
+    s="HELLO"
+    return s
+print(lower())
 
 
 
